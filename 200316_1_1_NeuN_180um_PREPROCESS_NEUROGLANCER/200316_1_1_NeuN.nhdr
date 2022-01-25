@@ -1,0 +1,30 @@
+NRRD0004
+# Complete NRRD file format specification at:
+# http://teem.sourceforge.net/nrrd/format.html
+#
+# NeuN Downsampled data load in slicer.
+# 
+# type imagej 16-bit = unsigned short
+# type imagej 32-bit real = float
+# space direction is both an affine transform and the voxel size 
+#          pay attention to the negative signs
+#          EMPIRICALLY FOUND FOUND FOR THIS LS DATA
+#                    ( +, +, + ) ( +, -, + ) ( +, +, -) 
+#          Typically ( -, +, + ) ( +, -, + ) ( +, +, -) 
+# space origin requires paying attention to negative signs also
+#          EMPIRICALLY FOUND FOUND FOR THIS LS DATA
+#                    -, +, +
+#          Typically +, +, -
+#          Formula for space origin is voxels*voxsize/2 - voxsize/2
+# 
+#
+type: float
+dimension: 3
+space: left-posterior-superior
+sizes: 76 106 50
+space directions: (0.18,0,0) (0,-0.18,0) (0,0,-0.18)
+kinds: domain domain domain
+endian: big
+encoding: raw
+space origin: (-6.75,9.45,4.41)
+data file: 200316_1_1_NeuN_180um.raw
